@@ -80,7 +80,7 @@ Here's a [link to my video result](./project_video.mp4)
 
 ####2. Describe how (and identify where in your code) you implemented some kind of filter for false positives and some method for combining overlapping bounding boxes.
 
-I recorded the positions of positive detections in each frame of the video.  From the positive detections I created a heatmap and then thresholded that map to identify vehicle positions.  I then used `scipy.ndimage.measurements.label()` to identify individual blobs in the heatmap.  I then assumed each blob corresponded to a vehicle.  I constructed bounding boxes to cover the area of each blob detected. 
+I recorded the positions of positive detections in each frame of the video.  From the positive detections I created a heatmap and added it with the corresponding heatmaps of the previous frames. Then thresholded that map to identify vehicle positions.  I then used `scipy.ndimage.measurements.label()` to identify individual blobs in the heatmap.  I then assumed each blob corresponded to a vehicle.  I constructed bounding boxes to cover the area of each blob detected. 
 
 Here's an example result showing the heatmap from a series of frames of video, the result of `scipy.ndimage.measurements.label()` and the bounding boxes then overlaid on the last frame of video:
 
@@ -102,5 +102,5 @@ Here's an example result showing the heatmap from a series of frames of video, t
 
 ####1. Briefly discuss any problems / issues you faced in your implementation of this project.  Where will your pipeline likely fail?  What could you do to make it more robust?
 
-The bounding boxes was flickering, and there were a lot of false positives. I tried to add the previous five frames heatmaps, and the result was much better.
+The bounding boxes was flickering, and there were a lot of false positives. I tried to add the previous five frames heatmaps, and the result was much better. Also, I added a condition that the width and height of the bounding boxes had to be equal or greater than 64 pixels, since the car was not likely to be smaller than 64 pixels.
 
