@@ -55,15 +55,14 @@ I tried various combinations of parameters and chose the one that has the highes
 
 ####3. Describe how (and identify where in your code) you trained a classifier using your selected HOG features (and color features if you used them).
 
-I trained a linear SVM using HOG features, color features and spatial features. I split the data into 
+I extracted the HOG features, color features and spatial features for each image and then normalize these features, then I used the normalized features to train a linear SVM.
 
 ###Sliding Window Search
 
 ####1. Describe how (and identify where in your code) you implemented a sliding window search.  How did you decide what scales to search and how much to overlap windows?
 
-I decided to search with 2 and 2.5 of the bottom of the images, and 1 and 1.5 of the middle of the images, and I ignored the pixels above 350, since there is unlikely to have car in the sky. The overlap of each window is 87.5%. 
+I decided to search with 2 and 2.5 of the bottom of the images, and 1 and 1.5 of the middle of the images, and I ignored the pixels above 350, since it was unlikely to have car in the sky. The overlap of each window was 87.5%. 
 
-![alt text][image3]
 
 ####2. Show some examples of test images to demonstrate how your pipeline is working.  What did you do to optimize the performance of your classifier?
 
