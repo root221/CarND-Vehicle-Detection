@@ -18,9 +18,9 @@ The goals / steps of this project are the following:
 [image1]: ./examples/car_not_car.png
 [image2]: ./examples/HOG_example.png
 [image3]: ./examples/sliding_windows.jpg
-[image4]: ./examples/sliding_window.jpg
-[image5]: ./examples/bboxes_and_heat.png
-[image6]: ./examples/labels_map.png
+[image4]: ./examples/1.jpg
+[image5]: ./examples/1.5.png
+[image6]: ./examples/2.png
 [image7]: ./examples/output_bboxes.png
 [video1]: ./output.mp4
 
@@ -66,9 +66,11 @@ I decided to search with 2 and 2.5 of the bottom of the images, and 1 and 1.5 of
 
 ####2. Show some examples of test images to demonstrate how your pipeline is working.  What did you do to optimize the performance of your classifier?
 
-Ultimately I searched on four scales using YUV 3-channel HOG features plus spatially binned color and histograms of color in the feature vector, which provided a nice result.  Here are some example images:
+Ultimately I searched on four scales using YUV 3-channel HOG features plus spatially binned color and histograms of color in the feature vector, which provided a nice result.  Here are some example images of different scales:
 
 ![alt text][image4]
+![alt text][image5]
+![alt text][image6]
 ---
 
 ### Video Implementation
